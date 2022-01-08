@@ -3,16 +3,16 @@ import './BusinessList.css';
 import Business from '../Business/Business'
 import { def } from '@vue/shared';
 
+
 class BusinessList extends React.Component {
     render() {
         return (
             <div className="BusinessList">
-                <Business />
-                <Business />
-                <Business />
-                <Business />
-                <Business />
-                <Business />
+                {
+                    this.props.businesses.map((business) => {
+                        return <Business business={business} />;
+                    })
+                }
             </div>
         )
     }
